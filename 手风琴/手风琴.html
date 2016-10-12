@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	ul{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	#box{
+		width: 1200px;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+	.list {
+		width: 1200px;
+		height: 260px;
+		overflow: hidden;
+		
+	}
+	.list li {		
+		float: left;
+		width: 30px;
+		height: 260px;
+		overflow: hidden;
+		cursor: pointer;
+		transition: 1s;
+	}
+</style>
+<script src="jquery.js"></script>
+<script>
+window.onload = function(){
+	var allLi = $('.list').find('li');
+	var ulW = $('.list').width();
+	var liLen = allLi.length;
+	var liW = allLi.width()
+	var wid = ulW/liLen	
+	$('li').css({
+		width:130
+	})
+	//第一张图片显示
+	allLi[0].style.width = 400+'px'
+	console.log($('li'))
+	$('li').mouseover(function(){		
+		$('li').css({
+			width:(ulW-400)/(liLen-1)
+		})
+		$(this).css({
+			width:400
+		});	
+	});	
+	$('li').mouseout(function(){
+		$('li').css({
+			width:ulW/liLen
+		});		
+	});
+	
+	
+};	
+</script>
+</head>
+<body>
+	<div id="box">
+		<ul class="list">
+			<li>
+				<img src="1.jpg"/>
+			</li>
+			<li>
+				<img src="2.jpg"/>
+			</li>
+			<li>
+				<img src="3.jpg"/>
+			</li>
+			<li>
+				<img src="4.jpg"/>
+			</li>
+			<li>
+				<img src="5.jpg"/>
+			</li>
+			<li>
+				<img src="6.jpg"/>
+			</li>
+			<li>
+				<img src="7.jpg"/>
+			</li>		
+		</ul>
+	</div>
+</body>
+</html>
