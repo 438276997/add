@@ -1,0 +1,383 @@
+@charset "utf-8";
+html {
+	height: 100%;
+}
+body {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+i,
+em {
+	font-style: normal;
+}
+input {
+	outline: none;
+	border: none;
+	background: #eff7f7;
+}
+h2,
+h3 {
+	margin: 0;
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+input,
+button,
+a
+{
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+input,
+button {
+	-webkit-appearance:none; 
+}
+input{
+	outline: none;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+img {
+	vertical-align: top;
+	border: none;
+}
+.clearFix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+.ico {
+	background: url(../img/jingling.png) no-repeat;
+	background-size: 8.3333rem 8.3333rem;
+}
+/*head*/
+.box {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 2.24rem;
+	overflow: auto;
+
+}
+.header {
+	position: relative;
+	background: #21cb94;
+	height: 2.25rem;
+}
+.header .a1 {
+	position: absolute;
+	left: 1rem;
+	top: 0.6rem;
+	width: 0.98rem;
+	height: 0.87rem;
+	background-position: 0 0;
+}
+.header input {
+	position: absolute;
+	left: 3.05rem;
+	top: 0.3rem;
+	width: 11.32rem;
+	height: 1.65rem;
+	border-radius: 0.083rem;
+	padding-left: 0.58rem;
+	font: 1rem/1 tahoma;
+}
+.header .a2 {
+	position: absolute;
+	left: 13.5rem;
+	top: 0.667rem;
+	width: 0.867rem;
+	height: 0.867rem;
+	background-position: -1.2rem 0.016rem;
+}
+.header .a3 {
+	position: absolute;
+	left: 15.92rem;
+	top: 0.433rem;
+	width: 1.067rem;
+	height: 1.15rem;
+	background-position: 0 -1rem;
+}
+.banner a {
+	display: block;
+	width: 18rem;
+	height: 6.45rem;
+	background: url(../img/banner.png) no-repeat;
+	background-size: 100% 100% ;
+}
+.nav a {
+	float: left;
+	font: 0.633rem/1 tahoma;
+	padding-top: 0.3rem;
+}
+.nav .a1 {
+	padding-left: 1.267rem;
+	width: 2.767rem;
+}
+.nav .a2 {
+	padding-left: 1.833rem;
+	width: 2.033rem;
+}
+.nav .a3 {
+	padding-left: 1.867rem;
+	width: 2.733rem;
+}
+.nav .a4 {
+	padding-left: 1.512rem;
+	width: 2.766rem;
+}
+.nav {
+	padding-bottom: 0.433rem;
+	border: 3px solid #f7f7f7;
+}
+.nav a {
+	color: #082031;
+}
+.nav .i1 {
+	display: block;
+	width: 1.6rem;
+	height: 1.6rem;
+	margin-left: 0.583rem;
+	margin-bottom: 0.267rem;
+	background-position: -2.183rem 0;
+}
+.nav .i2 {
+	display: block;
+	width: 1.6rem;
+	height: 1.6rem;
+	margin-bottom: 0.267rem;
+	background-position: -2.183rem 0;
+}
+.nav .i3 {
+	display: block;
+	width: 1.6rem;
+	height: 1.6rem;
+	margin-left: 0.583rem;
+	margin-bottom: 0.267rem;
+	background-position: -2.183rem 0;
+}
+.nav .i4 {
+	display: block;
+	width: 1.6rem;
+	height: 1.6rem;
+	margin-left: 0.583rem;
+	margin-bottom: 0.267rem;
+	background-position: -2.183rem 0;
+}
+.fistBox a {
+	float: left;
+	border-bottom: 0.05rem solid #f7f7f7;
+}
+.fistBox .pic1 img{
+	display: block;
+	width: 8.4rem;
+	height: 10.05rem;
+	border-right: 0.05rem solid #f7f7f7;
+}
+.fistBox .pic2 img{
+	display: block;
+	width: 9.5rem;
+	height: 5rem;
+	border-right: 0.05rem solid #f7f7f7;
+	/*border-bottom: 0.05rem solid #f7f7f7;*/
+}
+.fistBox .pic3 img{
+	display: block;
+	width: 9.5rem;
+	height: 5rem;
+	border-right: 0.05rem solid #f7f7f7;
+}
+.TMTitle a {
+	display: block;
+	height: 1.95rem;
+	padding-left: 0.55rem;
+	font: 0.8rem/1.95rem tahoma;
+	border-bottom: 0.45rem solid #f7f7f7;
+	color: #de2421;
+}
+.TMTitle span {
+	color: #000;
+}
+.JCTitle {
+	position: relative;
+	height: 2rem;
+	padding-left: 0.433rem;
+	font: 0.767rem/2rem tahoma;
+	color: #000;
+}
+.JCTitle i {
+	position: absolute;
+	left: 0;
+	top: 0.4rem;
+	width: 0.383rem;
+	height: 1.133rem;
+	background-position: 0 -2.367rem;
+}
+.secondBox .left {
+	float: left;
+	width: 8.95rem;
+}
+.secondBox .right {
+	float: right;
+	width: 8.95rem;
+}
+.secondBox .pic1 img{
+	width: 8.95rem;
+	height: 3.65rem;
+}
+.secondBox .style {
+	display: block;
+	height: 1rem;
+	text-align: center;
+	font: 0.567rem/1rem tahoma;
+	background: #e7e7e7;
+	color: #000;
+}
+.secondBox .price{
+	display: block;
+	height: 1rem;
+	padding-left: 5.6rem;
+	font: 0.567rem/1rem tahoma;
+	background: #ef5d63;
+	color: #fff;
+}
+.secondBox .pic2 img{
+	display: block;
+	width: 8.95rem;
+	height: 3.65rem;
+}
+.JXTitle {
+	position: relative;
+	height: 1.95rem;
+	padding-left: 0.433rem;
+	border-bottom: 0.05rem solid #f7f7f7;
+	font: 0.767rem/1.95rem tahoma;
+	color: #000;
+}
+.JXTitle i {
+	position: absolute;
+	left: 0;
+	top: 0.4rem;
+	width: 0.383rem;
+	height: 1.133rem;
+	background-position: 0 -2.367rem;
+}
+.wordNav a {
+	float: left;
+	font: 0.6333rem/0.95rem tahoma;
+	color: #000;
+}
+.wordNav span {
+	float: left;
+	padding-top: 0.95rem;
+	line-height: 0.95rem;
+	
+}
+.wordNav .a1 {
+	padding: 0 1.209rem 0 1.6333rem;
+	padding-top: 0.95rem;
+}
+.wordNav .a2 {
+	padding: 0 1.033rem 0 1.1rem;
+	padding-top: 0.95rem;
+}
+.wordNav .a3 {
+	padding: 0 1.033rem 0 1.1rem;
+	padding-top: 0.95rem;
+}
+.wordNav .a4 {
+	padding-left: 0.433rem;
+	padding-top: 0.95rem;
+}
+.wordNav .a5 {
+	padding: 0 1.067rem 0 0.717rem;
+	padding-top: 0.95rem;
+}
+.wordNav .a6 {
+	padding: 0 1.033rem 0 1.1rem;
+	padding-top: 0.95rem;
+}
+.wordNav .a7 {
+	padding: 0 0.439rem 0 0.433rem;
+	padding-top: 0.95rem;
+}
+.wordNav .a8 {
+	padding-left: 0.433rem;
+	padding-top: 0.95rem;
+}
+.dianqi img{
+	margin-top: 1.083rem;
+	width: 18rem;
+}
+.navPic a {
+	float: left;
+	width: ;
+}
+.navPic .pic1 img {
+	width: 4.5rem;
+	height: 6.933rem;
+}
+.navPic .pic2 img {
+	width: 4.5rem;
+	height: 7.467rem;
+}
+.back {
+	font: 0.683rem tahoma;
+	height: 1.517rem;
+	background: #f7f7f7;
+	text-align: center;
+	padding-top: 0.633rem;
+}
+.lastPic li {
+	float: left;	
+	border-right: 0.15rem solid #f7f7f7;
+	border-bottom: 0.15rem solid #f7f7f7;
+}
+.lastPic li a {
+	font: 0.65rem tahoma;	
+}
+.lastPic a img {
+	margin-top: 0.05rem;
+	width: 8.85rem;
+	height: 8.85rem;
+}
+.lastPic p {
+	padding-left: 0.45rem;
+	color: #636563;
+}
+.lastPic .money {
+	padding-top: 0.55rem;
+	padding-bottom: 0.433rem;
+	color: #de2421;
+}
+.end {
+	display: block;
+	font: 0.683rem tahoma;
+	height: 1.517rem;
+	background: #f7f7f7;
+	text-align: center;
+	padding-top: 0.633rem;
+	margin-bottom: 0.6rem;
+	color: #000;
+}
+
+
+
+
+
+
+
+
+
+

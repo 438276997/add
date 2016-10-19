@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script>
+var scale = 1;
+if(window.devicePixelRatio){
+	scale = scale / window.devicePixelRatio;
+}
+document.write('<meta name="viewport" width=device-width,content="initial-scale='+scale+',minimum-scale='+scale+',maximum-scale='+scale+',user-scalable=no" />');
+</script>
+<title>天猫</title>
+<link rel="stylesheet" type="text/css" href="css/tianmao.css"/>
+<script>
+toSize ();
+function toSize () {
+	var html = document.getElementsByTagName("html")[0];
+	var screenW = html.getBoundingClientRect().width; 
+	html.style.fontSize = screenW/18 + "px";
+}
+window.addEventListener(
+	"orientationchange",
+	function(){
+		//横竖屏切换之后，会执行这里边的代码
+		toSize ();
+	},
+	false
+);
+window.addEventListener(
+	"resize",
+	function(){
+		//横竖屏切换之后，会执行这里边的代码
+		toSize ();
+	},
+	false
+);
+/*
+	1rem = 页面宽度 16分之1
+  
+*/
+</script>
+</head>
+<body>
+<header class="header">
+	<a class="a1 ico" href="#"></a>
+	<input type="text" placeholder="搜索商品/店铺" onfocus="this.placeholder=''" onblur="this.placeholder='搜索商品/店铺'"/>
+	<a class="a2 ico" href="#"></a>
+	<a class="a3 ico" href="#"></a>
+</header>
+<div class="box">
+<div class="banner">
+	<a href="#"></a>
+</div>
+<nav class="nav clearFix">
+	<a class="a1" href="#">
+		<i class="i1 ico" href="#"></i>
+		我的订单
+	</a>
+	<a class="a2" href="#">
+		<i class="i2 ico" href="#"></i>
+		购物车
+	</a>
+	<a class="a3" href="#">
+		<i class="i3 ico" href="#"></i>
+		天猫超市
+	</a>
+	<a class="a4" href="#">
+		<i class="i4 ico" href="#"></i>
+		天猫国际
+	</a>	
+</nav>
+<div class="fistBox clearFix">
+	<a class="pic1" href="#"><img src="img/1.png"/></a>
+	<a class="pic2" href="#"><img src="img/2.png"/></a>
+	<a class="pic3" href="#"><img src="img/3.png"/></a>
+</div>
+<div class="TMTitle ">
+	<a href="#">
+		[<span>天猫</span>热点]
+	</a>	
+</div>
+<div class="JCTitle">
+	<i class="ico"></i>		
+	精彩热点	
+</div>
+<div class="secondBox clearFix">
+	<div class="left">
+		<a class="pic1" href="#"><img src="img/4.png"/></a>
+		<a class="style" href="#">-618服饰商场同款-</a>
+		<a class="price" href="#">满299减40</a>
+	</div>
+	<div class="right">
+		<a class="pic2" href="#"><img src="img/5.png"/></a>
+		<a class="style" href="#">-iphone限时钜惠-</a>
+		<a class="price" href="#">6s仅￥4533疯抢</a>
+	</div>	
+</div>
+<div class="JXTitle">
+	<i class="ico"></i>		
+	精选市场	
+</div>
+<div class="fistBox clearFix">
+	<a class="pic1" href="#"><img src="img/6.png"/></a>
+	<a class="pic2" href="#"><img src="img/7.png"/></a>
+	<a class="pic3" href="#"><img src="img/8.png"/></a>
+</div>
+<nav class="wordNav clearFix">
+	<a class="a1" href="#">t恤女</a><span>|</span>
+	<a class="a2" href="#">连衣裙</a><span>|</span>
+	<a class="a3" href="#">衬衫女</a><span>|</span>
+	<a class="a4" href="#">时尚套装女</a>
+	<a class="a5" href="#">牛仔裤女</a><span>|</span>
+	<a class="a6" href="#">雪纺衫</a><span>|</span>
+	<a class="a7" href="#">真丝连衣裙</a><span>|</span>
+	<a class="a8" href="#">牛仔短裤女</a>
+</nav>
+<div class="dianqi">
+	<a href="#"><img src="img/9.png"/></a>
+</div>
+<div class="JXTitle">
+	<i class="ico"></i>		
+	热门市场	
+</div>
+<nav class="navPic clearFix">
+	<a class="pic1" href="#"><img src="img/10.png"/></a>
+	<a class="pic1" href="#"><img src="img/13.png"/></a>
+	<a class="pic1" href="#"><img src="img/14.png"/></a>
+	<a class="pic1" href="#"><img src="img/15.png"/></a>
+	<a class="pic2" href="#"><img src="img/16.png"/></a>
+	<a class="pic2" href="#"><img src="img/17.png"/></a>
+	<a class="pic2" href="#"><img src="img/18.png"/></a>
+	<a class="pic2" href="#"><img src="img/19.png"/></a>
+</nav>
+<div class="back">
+	-猜你喜欢-
+</div>
+<ul class="lastPic clearFix">
+	 <li>
+	 	<a href="#">
+	 		<img src="img/20.png"/>
+	 		<p>[热销]奢奇泳衣女三件套</p>
+	 		<p>比基尼 小胸聚拢性感显瘦</p>
+	 		<p class="money">￥138.0</p>
+	 	</a>
+	 </li>
+	 <li>
+	 	<a href="#">
+	 		<img src="img/21.png"/>
+	 		<p>[热销]奢奇泳衣女三件套</p>
+	 		<p>比基尼 小胸聚拢性感显瘦</p>
+	 		<p class="money">￥138.0</p>
+	 	</a>
+	 </li>
+	 <li>
+	 	<a href="#">
+	 		<img src="img/20.png"/>
+	 		<p>[热销]奢奇泳衣女三件套</p>
+	 		<p>比基尼 小胸聚拢性感显瘦</p>
+	 		<p class="money">￥138.0</p>
+	 	</a>
+	 </li>
+	 <li>
+	 	<a href="#">
+	 		<img src="img/21.png"/>
+	 		<p>[热销]奢奇泳衣女三件套</p>
+	 		<p>比基尼 小胸聚拢性感显瘦</p>
+	 		<p class="money">￥138.0</p>
+	 	</a>
+	 </li>
+	 <li>
+	 	<a href="#">
+	 		<img src="img/20.png"/>
+	 		<p>[热销]奢奇泳衣女三件套</p>
+	 		<p>比基尼 小胸聚拢性感显瘦</p>
+	 		<p class="money">￥138.0</p>
+	 	</a>
+	 </li>
+	 <li>
+	 	<a href="#">
+	 		<img src="img/21.png"/>
+	 		<p>[热销]奢奇泳衣女三件套</p>
+	 		<p>比基尼 小胸聚拢性感显瘦</p>
+	 		<p class="money">￥138.0</p>
+	 	</a>
+	 </li>
+</ul>
+<a class="end" href="#">
+	-end-
+</a>
+
+</div>
+</body>
+</html>
