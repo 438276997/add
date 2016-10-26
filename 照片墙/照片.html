@@ -1,0 +1,311 @@
+
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>js旋转合并的照片墙-css3实例站</title>
+<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=0.5,user-scalable=no">
+<meta name="viewport" content="target-densitydpi=device-dpi" />
+
+<style>
+body {
+	overflow: hidden;
+}
+
+#div1 {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+
+#div1 div {
+	position: absolute;
+	-webkit-transition: 1.5s all ease-in-out;
+	-moz-transition: 1.5s all ease-in-out;
+	-ms-transition: 1.5s all ease-in-out;
+	-o-transition: 1.5s all ease-in-out;
+	border: 6px solid white;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
+	left: -300px;
+	top: -300px;
+	cursor: pointer;
+}
+
+#div1 div span {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	-webkit-transition: 1.5s opacity ease-in-out;
+	-moz-transition: 1.5s opacity ease-in-out;
+	-ms-transition: 1.5s opacity ease-in-out;
+	-o-transition: 1.5s opacity ease-in-out;
+}
+
+#div1 .active {
+	border: 1px solid white;
+	box-shadow: 0px 0px 2px black;
+}
+
+#prev,
+#next {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	top: 50%;
+	margin-top: -30px;
+	border: 1px solid #999;
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0.7);
+	z-index: 2;
+	-webkit-transition: 0.7s all ease;
+	opacity: 0.6;
+	-moz-transition: 0.7s all ease;
+	opacity: 0.6;
+	-ms-transition: 0.7s all ease;
+	opacity: 0.6;
+	-o-transition: 0.7s all ease;
+	opacity: 0.6;
+}
+
+#prev {
+	left: -20px;
+	border-radius: 0 8px 8px 0;
+	display: none;
+}
+
+#prev:hover {
+	left: 0;
+	opacity: 1;
+}
+
+#next {
+	right: -20px;
+	border-radius: 8px 0 0 8px;
+	display: none;
+}
+
+#next:hover {
+	right: 0;
+	opacity: 1;
+}
+.back{
+	position:absolute;
+	right:20px;
+	top:10px;
+	color:#000;
+	text-shadow:1px 1px 3px #999999;
+	text-decoration:none;
+	z-index:99999;
+}
+</style>
+</head>
+<body>
+<a href="javascript:;" id="prev">上一张</a>
+<a href="javascript:;" id="next">下一张</a>
+<div id="div1">
+</div>
+<script>
+var ROW=4,
+	COL=6,
+	NUM=24,
+	W=0,
+	H=0,
+	BW=0,
+	BH=0;
+function loading(){
+	try{
+		console.log(loaded/(NUM*2))
+	}
+	catch(e)
+	{
+	}
+}
+
+var loaded=0;
+var i=1;
+
+for(i=1;i<=NUM;i++){
+	var oImg=new Image();
+	
+	oImg.onload=function (){
+		BW=this.width;
+		BH=this.height;
+		if(++loaded==NUM*2){
+			loadedSucc();
+		}
+		
+		//loading();
+	};
+	
+	oImg.src='http://www.css3train.com/images/'+i+'.jpg';
+}
+
+for(i=1;i<=NUM;i++){
+	var oImg=new Image();
+	
+	oImg.onload=function (){
+		W=this.width;
+		H=this.height;
+		if(++loaded==NUM*2){
+			loadedSucc();
+		}
+		
+		//loading();
+	};
+	
+	oImg.src='http://www.css3train.com/images/point/'+i+'.jpg';
+}
+
+function loadedSucc(){
+	var oParent=document.getElementById('div1');
+	
+	var iNow=-1;
+	
+	var oPrev=document.getElementById('prev');
+	var oNext=document.getElementById('next');
+	
+	var tw=oParent.offsetWidth*0.9;
+	var th=oParent.offsetHeight*0.9;
+	var tl=oParent.offsetWidth*0.05;
+	var tt=oParent.offsetHeight*0.05;
+	
+	var dw=W;
+	var dh=H;
+	var a=(tw-COL*dw)/(COL+1);
+	var b=(th-ROW*dh)/(ROW+1);
+	
+	var k=1;
+	
+	var clicked=false;
+	
+	var aDiv=oParent.getElementsByTagName('div');
+	
+	for(var j=0;j<ROW;j++){
+		for(var i=0;i<COL;i++,k++){
+		
+			var oDiv=document.createElement('div');
+			
+			oDiv.index=k;
+			
+			oDiv.zns_left=parseInt(tl+a+i*(dw+a));
+			oDiv.zns_top=parseInt(tt+b+j*(dh+b));
+			oDiv.zns_bg='url(http://www.css3train.com/images/point/'+k+'.jpg)';
+			oDiv.zns_row=j;
+			oDiv.zns_col=i;
+			
+			oDiv.style.left=-Math.random()*300-200+'px';
+			oDiv.style.top=-Math.random()*300-200+'px';
+			
+			oDiv.style.width=dw+'px';
+			oDiv.style.height=dh+'px';
+			
+			oDiv.style.background=oDiv.zns_bg;
+			
+			oDiv.innerHTML='<span></span>';
+			
+			oParent.appendChild(oDiv);
+		}
+	}
+	
+	var ready=false;
+	
+	
+	var ii=aDiv.length-1;
+	var timer=setInterval(function (){
+		aDiv[ii].style.left=aDiv[ii].zns_left+'px';
+		aDiv[ii].style.top=aDiv[ii].zns_top+'px';
+		setStyle(aDiv[ii], 'transform', 'rotate('+(Math.random()*40-20)+'deg)');
+		
+		aDiv[ii].onclick=function (){
+			if(!ready)return;
+			var _this=this;
+			if(clicked){
+				(function (){
+					for(i=0;i<aDiv.length;i++){
+						var oSpan=aDiv[i].getElementsByTagName('span')[0];
+						
+						setStyle(aDiv[i], 'transform', 'rotate('+(Math.random()*40-20)+'deg)');
+						aDiv[i].style.left=aDiv[i].zns_left+'px';
+						aDiv[i].style.top=aDiv[i].zns_top+'px';
+						oSpan.style.filter='alpha(opacity:0)';
+						oSpan.style.opacity=0;
+						
+						aDiv[i].className='';
+					}
+					oPrev.style.display=oNext.style.display='none';
+				})();
+			}
+			else{
+				(function (){
+					var ll=(oParent.offsetWidth-BW)/2;
+					var tt=(oParent.offsetHeight-BH)/2;
+					
+					iNow=_this.index-1;
+					
+					for(i=0;i<aDiv.length;i++){
+						var oSpan=aDiv[i].getElementsByTagName('span')[0];
+						oSpan.style.background='url(http://www.css3train.com/images/'+_this.index+'.jpg) '+-aDiv[i].zns_col*dw+'px '+-aDiv[i].zns_row*dh+'px';
+						
+						setStyle(aDiv[i], 'transform', 'rotate(0)');
+						aDiv[i].style.left=ll+aDiv[i].zns_col*(dw+1)+'px';
+						aDiv[i].style.top=tt+aDiv[i].zns_row*(dh+1)+'px';
+						oSpan.style.filter='alpha(opacity:100)';
+						oSpan.style.opacity=1;
+						
+						aDiv[i].className='active';
+					}
+					oPrev.style.display=oNext.style.display='block';
+				})();
+			}
+			
+			clicked=!clicked;
+		};
+		
+		ii--;
+		if(ii==-1){
+			clearInterval(timer);
+			ready=true;
+		}
+	}, 100);
+	
+	oPrev.onclick=oNext.onclick=function (){
+		if(this==oPrev){
+			iNow--;
+			if(iNow==-1){
+				iNow=NUM-1;
+			}
+		}
+		else{
+			iNow++;
+			if(iNow==NUM){
+				iNow=0;
+			}
+		}
+		
+		var arr=[];
+		for(i=0;i<NUM;i++)arr[i]=i;
+		arr.sort(function (){return Math.random()-0.5;});
+		var timer=setInterval(function (){
+			var item=arr.pop();
+			
+			aDiv[item].getElementsByTagName('span')[0].style.background='url(http://www.css3train.com/images/'+(iNow+1)+'.jpg) '+-aDiv[item].zns_col*dw+'px '+-aDiv[item].zns_row*dh+'px';
+			
+			if(!arr.length)clearInterval(timer);
+		}, 20);
+	};
+}
+function setStyle(obj, name, value){
+	obj.style['Webkit'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+	obj.style['Moz'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+	obj.style['ms'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+	obj.style['O'+name.charAt(0).toUpperCase()+name.substring(1)]=value;
+	obj.style[name]=value;
+}
+</script>
+</body>
+</html>
